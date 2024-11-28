@@ -4,7 +4,7 @@ import { MDBFooter, MDBContainer, MDBIcon, MDBBtn } from "mdb-react-ui-kit";
 function Footer() {
   return (
     <div>
-      <MDBFooter className="bg-info mt-5 text-center text-white">
+      <MDBFooter className="bg-info mt-5 text-center text-white fixed-bottom">
         <MDBContainer className="p-4 pb-0">
           <section className="mb-4">
             <MDBBtn

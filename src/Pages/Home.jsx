@@ -17,7 +17,7 @@ function Home() {
           
         { 
         books?.length>0?books.map((book)=>
-        <Col sm={12} lg={3}>
+        <Col sm={12} lg={3} gap={2}>
             <Card style={{ width: "18rem" ,padding:"30px"}}>
               <Card.Img variant="top" src="https://cdn.pixabay.com/photo/2015/11/19/21/10/glasses-1052010_640.jpg" />
               <Card.Body>
