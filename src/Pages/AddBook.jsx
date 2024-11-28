@@ -1,20 +1,21 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { addBook, updateBook } from '../Redux/Slice/bookSlice';
+import React, { useState } from "react";
+import { addBook, updateBook } from "../Redux/Slice/bookSlice";
+import { useDispatch } from "react-redux";
 
-const AddBook = ({ currentBook, setEditing }) => {
-  const [book, setBook] = useState(currentBook || { title: '', description: '', id: Date.now() });
+const AddBook = () => {
+  const [book, setBook] = useState({
+    title: "",
+    description: "",
+    id: Date.now(),
+  });
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (currentBook) {
-      dispatch(updateBook(book));
-      setEditing(false);
-    } else {
-      dispatch(addBook(book));
-    }
-    setBook({ title: '', description: '', id: Date.now() });
+
+    dispatch(addBook(book));
+
+    setBook({ title: "", description: "", id: Date.now() });
   };
 
   return (
@@ -33,7 +34,7 @@ const AddBook = ({ currentBook, setEditing }) => {
         placeholder="BOOK Description"
         required
       />
-      <button type="submit">{currentBook ? 'Update' : 'Add'} Book</button>
+      <button type="submit"> Book</button>
     </form>
   );
 };
